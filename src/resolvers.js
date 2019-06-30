@@ -4,31 +4,6 @@ const qs = require('qs');
 
 const API_KEY = 'mhvsVNNQYN2u4QqKd8EYvyOVLt9Zu8Ef';
 
-const user = {
-  displayName: 'JoeCool4000',
-  avatarUrl: 'https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif',
-};
-
-const gifWithoutUser = {
-  id: 'YsTs5ltWtEhnq',
-  title: 'Happy Dancing GIF',
-  url: 'http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq',
-  embedUrl: 'http://giphy.com/embed/YsTs5ltWtEhnq',
-  source:
-    'http://www.reddit.com/r/reactiongifs/comments/1xpyaa/superman_goes_to_hollywood/',
-};
-const gifWithUser = {
-  id: 'YsTs5ltWtEhnq',
-  title: 'Happy Dancing GIF',
-  url: 'http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq',
-  embedUrl: 'http://giphy.com/embed/YsTs5ltWtEhnq',
-  source:
-    'http://www.reddit.com/r/reactiongifs/comments/1xpyaa/superman_goes_to_hollywood/',
-  user,
-};
-
-const gifs = [gifWithoutUser, gifWithUser];
-
 const stringifyObject = obj => {
   if (!obj || !Object.keys(obj)) {
     return '';
