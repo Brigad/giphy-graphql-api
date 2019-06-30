@@ -1,0 +1,19 @@
+{
+  "name": "@brigad/giphy-graphql-api",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "repository": "https://github.com/Brigad/giphy-graphql-api",
+  "author": "Adrien HARNAY <adrien@harnay.me>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "apollo-server": "2.6.7",
+    "graphql": "14.4.0",
+    "graphql-tools": "4.0.5",
+    "lodash.camelcase": "^4.3.0",
+    "node-fetch": "^2.6.0"
+  }
+}
