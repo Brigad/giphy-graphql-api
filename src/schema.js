@@ -10,7 +10,7 @@ module.exports = gql`
     id: String!
     title: String!
     url: String!
-    embedUrl: String!
+    urlSmall: String!
     source: String
     user: User
   }

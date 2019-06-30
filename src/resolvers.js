@@ -53,6 +53,13 @@ const camelcaseObjectKeys = object =>
     {},
   );
 
+const transformGifObject = gifObject =>
+  camelcaseObjectKeys({
+    ...gifObject,
+    url: `https://media.giphy.com/media/${gifObject.id}/giphy.gif`,
+    urlSmall: `https://media.giphy.com/media/${gifObject.id}/200w_d.gif`,
+  });
+
 module.exports = {
   Query: {
     gifs: async (_, { search, limit, offset }) => {
@@ -68,7 +75,7 @@ module.exports = {
         )}`,
       );
       const { data } = await res.json();
-      return data.map(camelcaseObjectKeys);
+      return data.map(transformGifObject);
     },
     trendingGifs: async (_, { search, limit, offset }) => {
       const query = {
@@ -82,7 +89,7 @@ module.exports = {
         )}`,
       );
       const { data } = await res.json();
-      return data.map(camelcaseObjectKeys);
+      return data.map(transformGifObject);
     },
     randomGif: async (_, { search }) => {
       const query = {
@@ -95,7 +102,7 @@ module.exports = {
         )}`,
       );
       const { data } = await res.json();
-      return camelcaseObjectKeys(data);
+      return transformGifObject(data);
     },
     gif: async (_, { id }) => {
       const query = {
@@ -105,7 +112,7 @@ module.exports = {
         `https://api.giphy.com/v1/gifs/${id}${stringifyQueryParameters(query)}`,
       );
       const { data } = await res.json();
-      return camelcaseObjectKeys(data);
+      return transformGifObject(data);
     },
   },
 };
