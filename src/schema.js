@@ -17,7 +17,7 @@ module.exports = gql`
 
   type Query {
     # GIPHY Search gives you instant access to our library of millions of GIFs by entering a word or phrase.
-    gifs(search: String!, limit: Int = 25, offset: Int = 0): [Gif!]!
+    gifs(search: String, limit: Int = 25, offset: Int = 0): [Gif!]!
 
     # GIPHY Trending returns a list of the most relevant and engaging content each and every day.
     trendingGifs(limit: Int = 25, offset: Int = 0): [Gif!]!
